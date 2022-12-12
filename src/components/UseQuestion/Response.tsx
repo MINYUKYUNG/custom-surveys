@@ -8,8 +8,8 @@ import { textResp, oneOptionResp, multipleOptionResp } from '../../store/questio
 function Response(item: quesType.QuestionsGuard) {
   const dispatch = useDispatch();
   const [hidden, setHidden] = useState(true);
-  const trueOption = useRef(0);
-  const checkOption = useRef(false);
+  const trueOneOptionIdx = useRef(0);
+  const optionChecked = useRef(false);
 
   const openClose = (bool: boolean) => setHidden(bool);
 
@@ -19,10 +19,10 @@ function Response(item: quesType.QuestionsGuard) {
   };
 
   const oneOptionRespBtn = (optionIndex: number) => { // 객관식 질문, 드롭박스 응답
-    if (hidden === false && item.type === quesConst.DROPDOWN_TYPE) {
-      openClose(true);
-      trueOption.current = optionIndex;
-    };
+    if (!hidden) openClose(true);
+
+    trueOneOptionIdx.current = optionIndex;
+    optionChecked.current = true;
 
     dispatch(oneOptionResp({ sendId: item.id, optionIndex }));
   };
@@ -72,8 +72,8 @@ function Response(item: quesType.QuestionsGuard) {
   } else if (quesConst.DROPDOWN_TYPE === item.type) {
     const dropdown = item.options.map((option, index) => {
       if (option.optionResponse) {
-        trueOption.current = index;
-        checkOption.current = true;
+        trueOneOptionIdx.current = index;
+        optionChecked.current = true;
       };
 
       return (
@@ -86,12 +86,12 @@ function Response(item: quesType.QuestionsGuard) {
     });
 
     const select = () => {
-      const checkReset = !(item.options[trueOption.current].optionResponse);
-      if (checkOption.current && checkReset) {
-        trueOption.current = 0;
-        checkOption.current = false;
+      const checkReset = !(item.options[trueOneOptionIdx.current].optionResponse);
+      if (optionChecked.current && checkReset) {
+        trueOneOptionIdx.current = 0;
+        optionChecked.current = false;
         return '선택해주세요';
-      } else if (checkOption.current) return item.options[trueOption.current].text;
+      } else if (optionChecked.current) return item.options[trueOneOptionIdx.current].text;
       else return '선택해주세요';
     };
 

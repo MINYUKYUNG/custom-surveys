@@ -9,7 +9,7 @@ function RouterView() {
         <Route path={"/"} element={<Create />} />
         <Route path={"/preview"} element={<Preview />} />
         <Route path={"/submit"} element={<Submit />} />
-        <Route path={'*'} element={<NotFound />}></Route>
+        <Route path={'*'} element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
