@@ -7,6 +7,6 @@ function Create() {
       <CreateQuestion />
     </div>
   );
-};
+}
 
 export default Create;

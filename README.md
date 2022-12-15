@@ -15,13 +15,15 @@ https://google-form-minyukyung.vercel.app
 ## About project
 1. 구글 폼 만들기
 
-2. 기능 구현
+2. 기능 구현 (수정 예정)
     - 질문, 옵션, 응답, 미리보기 : redux-toolkit 의 state 로 질문, 옵션, 응답 값을 관리하고 dispatch 로 추가, 편집, 복사, 삭제 값을 업데이트
     - 제출 페이지 : redux-toolkit 의 state 로 질문, 옵션, 응답 값을 가져오고, props 로 pointer-events-none 속성을 적용
     - 양식 지우기 : input 의 value, checked 값을 redux-toolkit 의 state 로 관리하여, dispatch 로 응답값을 초기화할 수 있도록 구현
     - 드래그 앤 드롭 : react-beautiful-dnd 를 사용하여 질문과 옵션의 드래그 앤 드롭 기능을 구현하고, dispatch 로 질문, 옵션 순서를 업데이트
 
-3. 서비스 화면 미리보기
+3. 문제 발생 & 해결 방법 (추가 예정)
+
+4. 서비스 화면 미리보기
     - 메인 페이지 (Create)
     ![create](./src/assets/images/create.png)
 

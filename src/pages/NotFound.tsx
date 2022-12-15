@@ -4,6 +4,6 @@ function NotFound() {
       NotFound
     </div>
   );
-};
+}
 
 export default NotFound;

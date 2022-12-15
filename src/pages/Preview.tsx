@@ -5,9 +5,9 @@ function Preview() {
   return (
     <div className="Preview">
       <UseTitle />
-      <UseQuestion pageUrl={pageConst.PREVIEW_PAGE_URL}/>
+      <UseQuestion pageUrl={pageConst.PREVIEW_PAGE_URL} />
     </div>
   );
-};
+}
 
 export default Preview;

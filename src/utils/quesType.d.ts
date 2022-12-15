@@ -3,7 +3,7 @@ export interface QuestionsGuard {
   title: string,
   type: string,
   options: {
-    id: number, 
+    id: number,
     text: string,
     optionResponse: boolean
   }[],
@@ -12,4 +12,4 @@ export interface QuestionsGuard {
     meet: boolean
   },
   textResponse: string
-};
+}

@@ -17,14 +17,14 @@ export const CHECKBOX_TEXT = '체크박스';
 export const DROPDOWN_TEXT = '드롭다운';
 
 // options
-export const DEFAULT_OPTIONS = [ 
-  { id: 1, text: '옵션 1', optionResponse: false } 
+export const DEFAULT_OPTIONS = [
+  { id: 1, text: '옵션 1', optionResponse: false },
 ];
 
 // required
 export const DEFAULT_REQUIRED = {
   condition: false,
-  meet: false
+  meet: false,
 };
 
 // textResponse
