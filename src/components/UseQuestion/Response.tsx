@@ -19,12 +19,12 @@ function Response({
 
   const openClose = (bool: boolean) => setHidden(bool);
 
-  const textRespBtn = (e: ChangeEvent<HTMLInputElement>) => { // 단답형, 장문형 응답
+  const textRespBtn = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     dispatch(textResp({ sendId: id, value }));
   };
 
-  const oneOptionRespBtn = (optionIndex: number) => { // 객관식 질문, 드롭박스 응답
+  const oneOptionRespBtn = (optionIndex: number) => {
     if (!hidden) openClose(true);
 
     trueOneOptionIdx.current = optionIndex;
@@ -36,12 +36,12 @@ function Response({
   const multipleOptionRespBtn = (
     e: ChangeEvent<HTMLInputElement>,
     optionIndex: number,
-  ) => { // 체크박스 응답
+  ) => {
     const { checked } = e.target;
     dispatch(multipleOptionResp({ sendId: id, optionIndex, checked }));
   };
 
-  const meetRequirements = () => ( // 필수 항목 응답 유무 확인 (미응답시 submit페이지로 이동불가)
+  const meetRequirements = () => (
     <div className="flex justify-end text-red-600 pt-6">
       <MdOutlineErrorOutline size="1.5em" />
       <span className="inline-block text-sm pl-2 leading-6">필수 질문입니다.</span>

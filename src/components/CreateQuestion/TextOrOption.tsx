@@ -50,11 +50,10 @@ function TextOrOption({ id, type, options }: quesType.QuestionsGuard) {
     );
   }
 
-  const deleteOptionBtn = (optionIndex: number) => { // 객관식 질문, 체크박스, 드롭박스 옵션 삭제
+  const deleteOptionBtn = (optionIndex: number) => {
     dispatch(deleteOption({ sendId: id, optionIndex }));
   };
 
-  // 객관식 질문, 체크박스, 드롭박스 옵션 텍스트 편집
   const editOptionTextBtn = (e: ChangeEvent<HTMLInputElement>, optionIndex: number) => {
     const { value } = e.target;
     dispatch(editOptionText({ sendId: id, optionIndex, value }));
@@ -102,7 +101,7 @@ function TextOrOption({ id, type, options }: quesType.QuestionsGuard) {
     );
   });
 
-  const addOptionBtn = () => { // 객관식 질문, 체크박스, 드롭박스 옵션 추가
+  const addOptionBtn = () => {
     let countId = 1;
     if (options.length) {
       options.forEach((option) => {
@@ -115,7 +114,7 @@ function TextOrOption({ id, type, options }: quesType.QuestionsGuard) {
     dispatch(addOption({ sendId: id, newOptionId: countId }));
   };
 
-  const onDragEnd = (result: DropResult) => { // 질문의 옵션 순서 변경 = 드래그 앤 드롭
+  const onDragEnd = (result: DropResult) => {
     if (!result.destination) return;
 
     const from = result.source.index;

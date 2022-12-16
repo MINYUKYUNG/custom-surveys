@@ -32,7 +32,7 @@ function CreateQuestion() {
 
   const countId = useRef(1);
 
-  useEffect(() => { // 뒤로가기 후에도, 질문 id 이어서 관리
+  useEffect(() => {
     if (questions.length !== 1) {
       questions.forEach((item) => {
         if (countId.current < item.id) countId.current = item.id;
@@ -40,21 +40,21 @@ function CreateQuestion() {
     }
   }, []);
 
-  const editTitleBtn = (e: ChangeEvent<HTMLInputElement>, sendId: number) => { // 질문 제목 편집
+  const editTitleBtn = (e: ChangeEvent<HTMLInputElement>, sendId: number) => {
     const { value } = e.target;
     dispatch(editTitle({ sendId, value }));
   };
 
-  const addQuesBtn = (sendId: number) => { // 질문 추가
+  const addQuesBtn = (sendId: number) => {
     countId.current += 1;
     dispatch(addQues({ sendId, newId: countId.current }));
   };
 
-  const deleteQuesBtn = (sendId: number) => { // 질문 삭제
+  const deleteQuesBtn = (sendId: number) => {
     dispatch(deleteQues(sendId));
   };
 
-  const copyQuesBtn = (sendId: number) => { // 질문 복사
+  const copyQuesBtn = (sendId: number) => {
     countId.current += 1;
     dispatch(copyQues({ sendId, newId: countId.current }));
   };
@@ -107,7 +107,7 @@ function CreateQuestion() {
     </Draggable>
   ));
 
-  const noLists = () => { // 질문을 모두 삭제하였을 때, 미리보기 버튼 hide & 질문 추가 버튼 visible
+  const noLists = () => {
     if (questions.length) return null;
     return (
       <div>
@@ -118,7 +118,7 @@ function CreateQuestion() {
     );
   };
 
-  const moveToPreview = () => { // 미리 보기 기능
+  const moveToPreview = () => {
     if (questions.length === 0) return null;
     return (
       <Link to="/preview" className="inline-block">
@@ -132,7 +132,7 @@ function CreateQuestion() {
     );
   };
 
-  const onDragEnd = (result: DropResult) => { // 질문 순서 변경 = 드래그 앤 드롭
+  const onDragEnd = (result: DropResult) => {
     if (!result.destination) return;
 
     const from = result.source.index;

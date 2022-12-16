@@ -20,16 +20,16 @@ function UseQuestion({ pageUrl }: { pageUrl: string }) {
     </div>
   ));
 
-  const moveToSubmit = () => { // 제출 버튼 -> 사용자가 작성한 데이터 보여주기
+  const moveToSubmit = () => {
     let count = 0;
-    questions.forEach((item) => { // 필수 항목 응답 유무 확인 (미응답시 submit페이지로 이동불가)
+    questions.forEach((item) => {
       if (item.required.meet < item.required.condition) count += 1;
     });
     if (count) alert(`필수 질문에 대한 답변을 완료해주세요 (${count}개 추가 답변 필요)`);
     else navigate(pageConst.SUBMIT_PAGE_URL);
   };
 
-  const resetRespBtn = () => { // 양식 지우기
+  const resetRespBtn = () => {
     dispatch(resetResp());
   };
 

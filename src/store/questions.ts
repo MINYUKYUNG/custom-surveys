@@ -8,7 +8,6 @@ const questions = createSlice({
     quesFunc.defaultQues(quesConst.DEFAULT_ID),
   ] as quesType.QuestionsGuard[],
   reducers: {
-    // addQues (질문 추가)
     addQues: (state, action) => {
       const { sendId } = action.payload;
       const { newId } = action.payload;
@@ -26,7 +25,6 @@ const questions = createSlice({
         }
       }
     },
-    // deleteQues (질문 삭제)
     deleteQues: (state, action) => {
       const sendId = action.payload;
 
@@ -37,7 +35,6 @@ const questions = createSlice({
         }
       }
     },
-    // copyQues (질문 복사)
     copyQues: (state, action) => {
       const { sendId } = action.payload;
       const { newId } = action.payload;
@@ -50,7 +47,6 @@ const questions = createSlice({
         }
       }
     },
-    // editRequired (필수 항목 설정 유무)
     editRequired: (state, action) => {
       const sendId = action.payload;
 
@@ -61,7 +57,6 @@ const questions = createSlice({
         }
       }
     },
-    // editTitle (질문 제목 편집)
     editTitle: (state, action) => {
       const { sendId } = action.payload;
       const newTitle = action.payload.value;
@@ -73,7 +68,6 @@ const questions = createSlice({
         }
       }
     },
-    // editType (질문 타입 편집)
     editType: (state, action) => {
       const { sendId } = action.payload;
       const { newType } = action.payload;
@@ -85,7 +79,6 @@ const questions = createSlice({
         }
       }
     },
-    // addOption (객관식 질문, 체크박스, 드롭박스 옵션 추가)
     addOption: (state, action) => {
       const { sendId } = action.payload;
       const { newOptionId } = action.payload;
@@ -103,7 +96,6 @@ const questions = createSlice({
         }
       }
     },
-    // deleteOption (객관식 질문, 체크박스, 드롭박스 옵션 삭제)
     deleteOption: (state, action) => {
       const { sendId } = action.payload;
       const { optionIndex } = action.payload;
@@ -115,7 +107,6 @@ const questions = createSlice({
         }
       }
     },
-    // editOptionText (객관식 질문, 체크박스, 드롭박스 옵션 텍스트 편집)
     editOptionText: (state, action) => {
       const { sendId } = action.payload;
       const { optionIndex } = action.payload;
@@ -128,7 +119,6 @@ const questions = createSlice({
         }
       }
     },
-    // textResponse (단답형, 장문형 응답)
     textResp: (state, action) => {
       const { sendId } = action.payload;
       const newTextResponse = action.payload.value;
@@ -142,7 +132,6 @@ const questions = createSlice({
         }
       }
     },
-    // optionResponse (객관식 질문, 드롭박스 응답)
     oneOptionResp: (state, action) => {
       const { sendId } = action.payload;
       const { optionIndex } = action.payload;
@@ -158,7 +147,6 @@ const questions = createSlice({
         }
       }
     },
-    // optionResponse (체크박스 응답)
     multipleOptionResp: (state, action) => {
       const { sendId } = action.payload;
       const { optionIndex } = action.payload;
@@ -179,7 +167,6 @@ const questions = createSlice({
         }
       }
     },
-    // resetResp (양식 지우기)
     resetResp: (state) => {
       state.forEach((item) => {
         item.textResponse = '';
@@ -189,7 +176,6 @@ const questions = createSlice({
         item.required.meet = false;
       });
     },
-    // changeQuesOrder (질문 순서 변경 = 드래그 앤 드롭)
     changeQuesOrder: (state, action) => {
       const { from } = action.payload;
       const { to } = action.payload;
@@ -197,7 +183,6 @@ const questions = createSlice({
       const [item] = state.splice(from, 1);
       state.splice(to, 0, item);
     },
-    // changeOptionOrder (질문의 옵션 순서 변경 = 드래그 앤 드롭)
     changeOptionOrder: (state, action) => {
       const { sendId } = action.payload;
       const { from } = action.payload;

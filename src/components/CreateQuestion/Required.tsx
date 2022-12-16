@@ -5,7 +5,7 @@ import { editRequired } from '../../store/questions';
 function Required({ id, required }: quesType.QuestionsGuard) {
   const dispatch = useDispatch();
 
-  const editRequiredBtn = () => { // 필수 항목 설정 유무
+  const editRequiredBtn = () => {
     const sendId = id;
     dispatch(editRequired(sendId));
   };

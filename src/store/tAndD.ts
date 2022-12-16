@@ -7,7 +7,6 @@ const tAndD = createSlice({
     description: '설문지 설명',
   },
   reducers: {
-    // 설문지 제목 추가, 편집 // 설문지 설명 추가, 편집
     editTAndD: (state, action) => {
       const { title } = action.payload;
       const { description } = action.payload;

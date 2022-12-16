@@ -18,7 +18,7 @@ function SelectType({ id, type }: quesType.QuestionsGuard) {
 
   const openClose = (bool: boolean) => setHidden(bool);
 
-  const editTypeBtn = (newType: string) => { // 질문 타입 편집
+  const editTypeBtn = (newType: string) => {
     openClose(true);
     dispatch(editType({ sendId: id, newType }));
   };
