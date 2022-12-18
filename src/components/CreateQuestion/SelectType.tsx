@@ -23,33 +23,33 @@ function SelectType({ id, type }: quesType.QuestionsGuard) {
     dispatch(editType({ sendId: id, newType }));
   };
 
-  const short = () => [
+  const short = [
     <MdShortText size="1.5em" key={1} />,
     <span className="inline-block text-sm" key={2}>{quesConst.SHORT_TEXT}</span>,
   ];
-  const essay = () => [
+  const essay = [
     <MdOutlineFormatAlignLeft size="1.5em" key={1} />,
     <span className="inline-block text-sm" key={2}>{quesConst.ESSAY_TEXT}</span>,
   ];
-  const choice = () => [
+  const choice = [
     <MdRadioButtonChecked size="1.5em" key={1} />,
     <span className="inline-block text-sm" key={2}>{quesConst.CHOICE_TEXT}</span>,
   ];
-  const checkbox = () => [
+  const checkbox = [
     <MdCheckBox size="1.5em" key={1} />,
     <span className="inline-block text-sm" key={2}>{quesConst.CHECKBOX_TEXT}</span>,
   ];
-  const dropdown = () => [
+  const dropdown = [
     <MdArrowDropDownCircle size="1.5em" key={1} />,
     <span className="inline-block text-sm" key={2}>{quesConst.DROPDOWN_TEXT}</span>,
   ];
 
   const typesInfo = [
-    { type: quesConst.SHORT_TYPE, text: short() },
-    { type: quesConst.ESSAY_TYPE, text: essay() },
-    { type: quesConst.CHOICE_TYPE, text: choice() },
-    { type: quesConst.CHECKBOX_TYPE, text: checkbox() },
-    { type: quesConst.DROPDOWN_TYPE, text: dropdown() },
+    { type: quesConst.SHORT_TYPE, text: short },
+    { type: quesConst.ESSAY_TYPE, text: essay },
+    { type: quesConst.CHOICE_TYPE, text: choice },
+    { type: quesConst.CHECKBOX_TYPE, text: checkbox },
+    { type: quesConst.DROPDOWN_TYPE, text: dropdown },
   ];
 
   const itemType = typesInfo.find((info) => info.type === type);
