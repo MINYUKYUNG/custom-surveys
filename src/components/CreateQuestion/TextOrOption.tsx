@@ -84,6 +84,7 @@ function TextOrOption({ id, type, options }: quesType.QuestionsGuard) {
             {whichType()}
             <input
               type="text"
+              placeholder="옵션"
               defaultValue={option.text}
               onChange={(e) => editOptionTextBtn(e, index)}
               className="focus-visible:outline-none border-b-2 focus:border-rose-400 grow pb-1 ml-2 mr-8"

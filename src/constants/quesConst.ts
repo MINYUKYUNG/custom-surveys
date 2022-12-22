@@ -1,7 +1,5 @@
 export const DEFAULT_ID = 1;
 
-export const DEFAULT_TITLE = '질문';
-
 export const SHORT_TYPE = 'short';
 export const ESSAY_TYPE = 'essay';
 export const CHOICE_TYPE = 'choice';

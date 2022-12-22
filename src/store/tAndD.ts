@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { tAndDConst } from '../constants';
 
 const tAndD = createSlice({
   name: 'tAndD',
   initialState: {
-    title: '제목 없는 설문지',
-    description: '설문지 설명',
+    title: tAndDConst.TANDD_DEFAULT_TITLE,
+    description: tAndDConst.TANDD_DEFAULT_DESCRIPTION,
   },
   reducers: {
     editTAndD: (state, action) => {

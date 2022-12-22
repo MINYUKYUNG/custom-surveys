@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editTAndD } from '../../store/tAndD';
 import { RootState } from '../../store';
+import { tAndDConst } from '../../constants';
 
 function CreateTitle() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function CreateTitle() {
         <input
           type="text"
           name="title"
+          placeholder={tAndDConst.TANDD_DEFAULT_TITLE}
           defaultValue={title}
           onChange={updateTAndD}
           className="focus-visible:outline-none border-b-2 focus:border-rose-400 text-2xl mb-5"
@@ -29,6 +31,7 @@ function CreateTitle() {
         <input
           type="text"
           name="desc"
+          placeholder={tAndDConst.TANDD_DEFAULT_DESCRIPTION}
           defaultValue={description}
           onChange={updateTAndD}
           className="focus-visible:outline-none border-b-2 focus:border-rose-400"
