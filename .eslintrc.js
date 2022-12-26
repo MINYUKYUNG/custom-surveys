@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -55,6 +56,8 @@ module.exports = {
     'global-require': 'off',
     'import/prefer-default-export': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
+    indent: 'off',
+    '@typescript-eslint/indent': ['error', 2],
   },
   settings: {
     'import/resolver': {

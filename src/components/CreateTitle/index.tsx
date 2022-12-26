@@ -24,7 +24,7 @@ function CreateTitle() {
           type="text"
           name="title"
           placeholder={tAndDConst.TANDD_DEFAULT_TITLE}
-          defaultValue={title}
+          defaultValue={title || '제목 없는 설문지'}
           onChange={updateTAndD}
           className="focus-visible:outline-none border-b-2 focus:border-rose-400 text-2xl mb-5"
         />
@@ -32,7 +32,7 @@ function CreateTitle() {
           type="text"
           name="desc"
           placeholder={tAndDConst.TANDD_DEFAULT_DESCRIPTION}
-          defaultValue={description}
+          defaultValue={description || '설문지 설명'}
           onChange={updateTAndD}
           className="focus-visible:outline-none border-b-2 focus:border-rose-400"
         />

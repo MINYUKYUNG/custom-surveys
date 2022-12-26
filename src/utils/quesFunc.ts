@@ -9,3 +9,26 @@ export const defaultQues = (newId: number): QuestionsGuard => ({
   required: quesConst.DEFAULT_REQUIRED,
   textResponse: quesConst.DEFAULT_TEXT_RESPONSE,
 });
+
+export const newQues = (
+  id: number,
+  title: string,
+  type: string,
+  options: {
+    id: number,
+    text: string,
+    optionResponse: boolean
+  }[],
+  required: {
+    condition: boolean,
+    meet: boolean
+  },
+  textResponse: string,
+): QuestionsGuard => ({
+  id,
+  title,
+  type,
+  options,
+  required,
+  textResponse,
+});
