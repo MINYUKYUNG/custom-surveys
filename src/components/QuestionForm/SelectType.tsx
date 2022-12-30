@@ -54,7 +54,7 @@ function SelectType({ id, type }: quesType.QuestionsGuard) {
 
   const itemType = typesInfo.find((info) => info.type === type);
 
-  const typeLists = typesInfo.map((info, index) => (
+  const typeList = typesInfo.map((info, index) => (
     <li onClick={() => editTypeBtn(info.type)} key={index}>
       <button
         type="button"
@@ -79,7 +79,7 @@ function SelectType({ id, type }: quesType.QuestionsGuard) {
         className={`dropdown-content menu p-2 shadow bg-base-100 rounded-box w-full ${hidden ? 'hidden' : ''}`}
         tabIndex={0}
       >
-        {typeLists}
+        {typeList}
       </ul>
     </div>
   );

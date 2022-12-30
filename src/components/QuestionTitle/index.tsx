@@ -4,7 +4,7 @@ import { editTAndD } from '../../store/tAndD';
 import { RootState } from '../../store';
 import { tAndDConst } from '../../constants';
 
-function CreateTitle() {
+function QuestionTitle() {
   const dispatch = useDispatch();
   const { title, description } = useSelector((state: RootState) => state.tAndD);
 
@@ -41,4 +41,4 @@ function CreateTitle() {
   );
 }
 
-export default CreateTitle;
+export default QuestionTitle;

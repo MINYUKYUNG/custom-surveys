@@ -26,7 +26,7 @@ import {
   changeQuesOrder,
 } from '../../store/questions';
 
-function CreateQuestion() {
+function QuestionForm() {
   const dispatch = useDispatch();
   const questions = useSelector((state: RootState) => state.questions);
 
@@ -59,7 +59,7 @@ function CreateQuestion() {
     dispatch(copyQues({ sendId, newId: countId.current }));
   };
 
-  const createLists = questions.map((item, index) => (
+  const createList = questions.map((item, index) => (
     <Draggable draggableId={`itemId-${item.id}`} index={index} key={`itemId-${item.id}`}>
       {(provided) => (
         <div
@@ -107,7 +107,7 @@ function CreateQuestion() {
     </Draggable>
   ));
 
-  const noLists = () => {
+  const noList = () => {
     if (questions.length) return null;
     return (
       <div>
@@ -142,12 +142,12 @@ function CreateQuestion() {
 
   return (
     <main>
-      {noLists()}
+      {noList()}
       <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="createLists" type="createLists">
+        <Droppable droppableId="createList" type="createList">
           {(provided) => (
             <div {...provided.droppableProps} ref={provided.innerRef}>
-              {createLists}
+              {createList}
               {provided.placeholder}
             </div>
           )}
@@ -158,4 +158,4 @@ function CreateQuestion() {
   );
 }
 
-export default CreateQuestion;
+export default QuestionForm;

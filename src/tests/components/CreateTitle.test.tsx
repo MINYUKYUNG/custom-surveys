@@ -1,20 +1,22 @@
 import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from '../../utils/test-utils';
 import { tAndDConst } from '../../constants';
-import { CreateTitle } from '../../components';
+import { QuestionTitle } from '../../components';
 
 it('title value change', async () => {
-  const { getByDisplayValue } = renderWithProviders(<CreateTitle />);
+  const { getByDisplayValue } = renderWithProviders(<QuestionTitle />);
+  const expected = '제목을 바꿀까요?';
 
   const title = getByDisplayValue(tAndDConst.TANDD_DEFAULT_TITLE);
-  fireEvent.change(title, { target: { value: '제목을 바꿀까요?' } });
-  expect(title).toHaveValue('제목을 바꿀까요?');
+  fireEvent.change(title, { target: { value: expected } });
+  expect(title).toHaveValue(expected);
 });
 
 it('description value change', async () => {
-  const { getByDisplayValue } = renderWithProviders(<CreateTitle />);
+  const { getByDisplayValue } = renderWithProviders(<QuestionTitle />);
+  const expected = '설명을 바꿀게요!';
 
   const description = getByDisplayValue(tAndDConst.TANDD_DEFAULT_DESCRIPTION);
-  fireEvent.change(description, { target: { value: '설명을 바꿀게요!' } });
-  expect(description).toHaveValue('설명을 바꿀게요!');
+  fireEvent.change(description, { target: { value: expected } });
+  expect(description).toHaveValue(expected);
 });

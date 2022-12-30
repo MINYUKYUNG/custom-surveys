@@ -1,10 +1,10 @@
-import { CreateTitle, CreateQuestion } from '../components';
+import { QuestionTitle, QuestionForm } from '../components';
 
 function Create() {
   return (
     <div className="Create">
-      <CreateTitle />
-      <CreateQuestion />
+      <QuestionTitle />
+      <QuestionForm />
     </div>
   );
 }

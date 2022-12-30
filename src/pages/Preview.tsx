@@ -1,11 +1,11 @@
-import { UseTitle, UseQuestion } from '../components';
+import { ResponseTitle, ResponseForm } from '../components';
 import { pageConst } from '../constants';
 
 function Preview() {
   return (
     <div className="Preview">
-      <UseTitle />
-      <UseQuestion pageUrl={pageConst.PREVIEW_PAGE_URL} />
+      <ResponseTitle />
+      <ResponseForm pageUrl={pageConst.PREVIEW_PAGE_URL} />
     </div>
   );
 }

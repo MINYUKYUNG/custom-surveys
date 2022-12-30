@@ -1,8 +1,8 @@
 import { renderWithProviders } from '../../../utils/test-utils';
-import SelectType from '../../../components/CreateQuestion/SelectType';
+import SelectType from '../../../components/QuestionForm/SelectType';
 import { quesConst } from '../../../constants';
 
-it('CreateQuestion/index rendering', async () => {
+it('QuestionForm/index rendering', async () => {
   const item = {
     id: 1,
     title: '질문',

@@ -1,6 +1,6 @@
 import { renderWithProviders } from '../../../utils/test-utils';
-import { CreateQuestion } from '../../../components';
+import { QuestionForm } from '../../../components';
 
-it('CreateQuestion/index rendering', async () => {
-  renderWithProviders(<CreateQuestion />);
+it('QuestionForm/index rendering', async () => {
+  renderWithProviders(<QuestionForm />);
 });

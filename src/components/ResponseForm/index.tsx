@@ -5,12 +5,12 @@ import { pageConst } from '../../constants';
 import Response from './Response';
 import { resetResp } from '../../store/questions';
 
-function UseQuestion({ pageUrl }: { pageUrl: string }) {
+function ResponseForm({ pageUrl }: { pageUrl: string }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const questions = useSelector((state: RootState) => state.questions);
 
-  const previewLists = questions.map((item, index) => (
+  const previewList = questions.map((item, index) => (
     <div className="bg-white mb-5 p-7 border rounded-xl border-transparent" key={index}>
       <h3>
         {item.title}
@@ -55,10 +55,10 @@ function UseQuestion({ pageUrl }: { pageUrl: string }) {
 
   return (
     <main className={submitPage ? 'pointer-events-none' : ''}>
-      {previewLists}
+      {previewList}
       {submitPage ? null : previewBtn()}
     </main>
   );
 }
 
-export default UseQuestion;
+export default ResponseForm;
