@@ -6,10 +6,10 @@
 3. [About project](#about-project)
 4. [실행 방법](#실행-방법)
 5. [디렉토리 구조](#디렉토리-구조)
+<br/>
 
 ## 배포 링크
 - https://custom-surveys.chloemin.com
-<br/>
 <br/>
 
 ## 기술 스택
@@ -34,10 +34,10 @@
 4. 서비스 화면 미리보기  
         - 메인 페이지 (Create)
     ![create](./src/assets/images/create.png)
-<br/>  
+ 
         - 미리보기 페이지 (Preview)
     ![preview](./src/assets/images/preview.png)
-<br/>  
+ 
         - 제출 페이지 (Submit)
     ![submit](./src/assets/images/submit.png)
 <br/>
@@ -69,5 +69,3 @@
 | routes | 리액트 라우팅 파일 디렉토리 |
 | store | 전역상태관리 파일 디렉토리 |
 | utils | 중복 로직 함수를 순수 함수화한 파일 디렉토리 |
-<br/>
-
