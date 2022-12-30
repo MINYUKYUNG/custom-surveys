@@ -32,13 +32,13 @@
         - 상태 관리, 컴포넌트 렌더링 단위 테스트
 
 4. 서비스 화면 미리보기  
-        - 메인 페이지 (Create)
+- 메인 페이지 (Create)
     ![create](./src/assets/images/create.png)
  
-        - 미리보기 페이지 (Preview)
+- 미리보기 페이지 (Preview)
     ![preview](./src/assets/images/preview.png)
  
-        - 제출 페이지 (Submit)
+- 제출 페이지 (Submit)
     ![submit](./src/assets/images/submit.png)
 <br/>
 
